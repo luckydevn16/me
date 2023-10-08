@@ -2,7 +2,7 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
-    node: true
+    node: true,
   },
   extends: [
     "airbnb",
@@ -10,32 +10,54 @@ module.exports = {
     "airbnb/hooks",
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
-    "eslint:recommended"
+    "eslint:recommended",
+    "prettier",
   ],
   overrides: [
     {
       env: {
-        node: true
+        node: true,
       },
       files: [".eslintrc.{js,cjs}"],
       parserOptions: {
-        sourceType: "script"
-      }
-    }
+        sourceType: "script",
+      },
+    },
   ],
   parser: "@typescript-eslint/parser",
   parserOptions: {
     ecmaVersion: "latest",
     sourceType: "module",
     project: "./tsconfig.json",
-    tsconfigRootDir: "./"
+    tsconfigRootDir: "./",
   },
-  plugins: ["react", "@typescript-eslint"],
+  plugins: ["react", "@typescript-eslint", "prettier"],
   rules: {
-    "@typescript-eslint/semi": 0,
+    "@typescript-eslint/comma-dangle": 0,
     "@typescript-eslint/quotes": 0,
-    "react/react-in-jsx-scope": 0,
+    "@typescript-eslint/semi": 0,
     "import/no-extraneous-dependencies": ["error", { devDependencies: true }],
-    "@typescript-eslint/comma-dangle": ["error", "never"]
-  }
-};
+    "import/order": [
+      "error",
+      {
+        groups: ["builtin", "external", "internal"],
+        pathGroups: [
+          {
+            pattern: "react",
+            group: "external",
+            position: "before",
+          },
+        ],
+        pathGroupsExcludedImportTypes: ["react"],
+        "newlines-between": "always",
+        alphabetize: {
+          order: "asc",
+          caseInsensitive: true,
+        },
+      },
+    ],
+    "linebreak-style": 0,
+    "jsx-a11y/anchor-is-valid": 0,
+    "react/react-in-jsx-scope": 0,
+  },
+}
