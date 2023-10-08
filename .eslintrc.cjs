@@ -34,6 +34,7 @@ module.exports = {
   plugins: ["react", "@typescript-eslint", "prettier"],
   rules: {
     "@typescript-eslint/comma-dangle": 0,
+    "@typescript-eslint/no-explicit-any": 0,
     "@typescript-eslint/quotes": 0,
     "@typescript-eslint/semi": 0,
     "import/no-extraneous-dependencies": ["error", { devDependencies: true }],
@@ -60,5 +61,6 @@ module.exports = {
     "linebreak-style": 0,
     "jsx-a11y/anchor-is-valid": 0,
     "react/react-in-jsx-scope": 0,
+    "react/prop-types": 0,
   },
 }

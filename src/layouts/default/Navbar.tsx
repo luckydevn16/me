@@ -1,7 +1,4 @@
-import React from "react"
-
 import {
-  Button,
   Link,
   Navbar,
   NavbarBrand,
@@ -10,30 +7,40 @@ import {
   NavbarMenu,
   NavbarMenuItem,
   NavbarMenuToggle,
+  Switch,
 } from "@nextui-org/react"
+import localforage from "localforage"
+import { FiSun, FiMoon } from "react-icons/fi"
+import { useLocation } from "react-router-dom"
 
 import { ROUTERS } from "../../utils/constants"
 
-export default function DefaultNavbar() {
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false)
+export default function DefaultNavbar({ darkMode, setDarkMode }: any) {
+  const location = useLocation()
 
   return (
-    <Navbar isBordered onMenuOpenChange={setIsMenuOpen}>
+    <Navbar isBordered>
       <NavbarContent>
-        <NavbarMenuToggle
-          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-          className="sm:hidden"
-        />
+        <NavbarMenuToggle className="md:hidden" />
 
         <NavbarBrand>
           <span className="text-xl font-bold">Julian Keller</span>
         </NavbarBrand>
       </NavbarContent>
 
-      <NavbarContent className="hidden gap-4 sm:flex" justify="center">
+      <NavbarContent className="hidden gap-4 md:flex" justify="center">
         {ROUTERS.map((r) => (
-          <NavbarItem key={r.path}>
-            <Link className="uppercase" color="foreground" href={r.path}>
+          <NavbarItem
+            key={r.path}
+            isActive={location.pathname === `/${r.path}`}
+          >
+            <Link
+              className="uppercase"
+              color={
+                location.pathname === `/${r.path}` ? "primary" : "foreground"
+              }
+              href={r.path}
+            >
               {r.text}
             </Link>
           </NavbarItem>
@@ -41,20 +48,30 @@ export default function DefaultNavbar() {
       </NavbarContent>
 
       <NavbarContent justify="end">
-        <NavbarItem className="hidden lg:flex">
-          <Link href="#">Login</Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Button as={Link} color="primary" href="#" variant="flat">
-            Sign Up
-          </Button>
-        </NavbarItem>
+        <Switch
+          size="lg"
+          color="default"
+          startContent={<FiSun />}
+          endContent={<FiMoon />}
+          isSelected={!darkMode}
+          onValueChange={(isSelected: boolean) => {
+            setDarkMode(!isSelected)
+            localforage.setItem("darkMode", !isSelected)
+          }}
+        />
       </NavbarContent>
 
-      <NavbarMenu>
+      <NavbarMenu className={`${darkMode ? 'dark' : ''}`}>
         {ROUTERS.map((r) => (
           <NavbarMenuItem key={r.path}>
-            <Link className="w-full uppercase" size="lg" color="primary" href={r.path}>
+            <Link
+              className="w-full uppercase"
+              size="lg"
+              color={
+                location.pathname === `/${r.path}` ? "primary" : "foreground"
+              }
+              href={r.path}
+            >
               {r.text}
             </Link>
           </NavbarMenuItem>
