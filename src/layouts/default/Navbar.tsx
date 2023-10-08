@@ -24,7 +24,7 @@ export default function DefaultNavbar({ darkMode, setDarkMode }: any) {
         <NavbarMenuToggle className="md:hidden" />
 
         <NavbarBrand>
-          <span className="text-xl font-bold">Julian Keller</span>
+          <a className="text-xl font-bold" href="about">{import.meta.env.VITE_APP_HERO}</a>
         </NavbarBrand>
       </NavbarContent>
 

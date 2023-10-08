@@ -3,9 +3,8 @@ import { createBrowserRouter } from "react-router-dom"
 import DefaultLayout from "./layouts/default"
 import About from "./pages/About"
 import Certification from "./pages/Certification"
-import Education from "./pages/Education"
+import Contact from "./pages/Contact"
 import Portfolio from "./pages/Portfolio"
-import Resume from "./pages/Resume"
 import Skill from "./pages/Skill"
 
 const router = createBrowserRouter([
@@ -20,10 +19,6 @@ const router = createBrowserRouter([
         element: <About />,
       },
       {
-        path: "education",
-        element: <Education />,
-      },
-      {
         path: "certification",
         element: <Certification />,
       },
@@ -36,8 +31,8 @@ const router = createBrowserRouter([
         element: <Portfolio />,
       },
       {
-        path: "resume",
-        element: <Resume />,
+        path: "contact",
+        element: <Contact />,
       },
     ],
   },
