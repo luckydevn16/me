@@ -56,6 +56,7 @@ module.exports = {
         },
       },
     ],
+    "import/prefer-default-export": 0,
     "linebreak-style": 0,
     "jsx-a11y/anchor-is-valid": 0,
     "react/react-in-jsx-scope": 0,
