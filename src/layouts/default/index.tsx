@@ -22,7 +22,7 @@ export default function DefaultLayout() {
   if (loading) return null
 
   return (
-    <main className={`flex flex-col min-h-screen ${darkMode ? 'dark' : ''} text-foreground bg-background min-h-100`}>
+    <main className={`flex flex-col min-w-[300px] min-h-screen ${darkMode ? 'dark' : ''} text-foreground bg-background min-h-100`}>
       <DefaultNavbar darkMode={darkMode} setDarkMode={setDarkMode} />
 
       <Outlet />
