@@ -11,9 +11,13 @@ export const ROUTERS = [
     text: "Skill",
     path: "skill",
   },
+  // {
+  //   text: "Portfolio",
+  //   path: "portfolio",
+  // },
   {
-    text: "Portfolio",
-    path: "portfolio",
+    text: "Resume",
+    path: "resume",
   },
   {
     text: "Contact",
