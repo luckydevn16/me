@@ -1,6 +1,6 @@
 import { Card, CardBody, CardHeader, Progress } from "@nextui-org/react"
 
-import { DATABASE, MOBILE, OTHERS, PROGRAM_LANGUAGES, TOOLS, WEB_BACKEND, WEB_FRONTEND } from "../utils/constants"
+import { DATABASE, MOBILE, OTHERS, PROGRAM_LANGUAGES, SERVICES, TOOLS, WEB_BACKEND, WEB_FRONTEND } from "../utils/constants"
 
 export default function Skill() {
   return (
@@ -146,6 +146,29 @@ export default function Skill() {
 
         <Card>
           <CardHeader className="text-2xl font-bold">
+            Services
+          </CardHeader>
+
+          <CardBody>
+            <div className="grid gap-4 md:gap-8 grid-cols sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+              {SERVICES.map((item) => (
+                <Progress
+                  key={item.text}
+                  showValueLabel
+                  size="md"
+                  color="primary"
+                  formatOptions={{ style: "percent" }}
+                  label={item.text}
+                  maxValue={1}
+                  value={item.value}
+                />
+              ))}
+            </div>
+          </CardBody>
+        </Card>
+
+        <Card>
+          <CardHeader className="text-2xl font-bold">
             Tools
           </CardHeader>
 
@@ -156,7 +179,7 @@ export default function Skill() {
                   key={item.text}
                   showValueLabel
                   size="md"
-                  color="primary"
+                  color="success"
                   formatOptions={{ style: "percent" }}
                   label={item.text}
                   maxValue={1}

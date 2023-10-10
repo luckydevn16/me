@@ -286,6 +286,21 @@ export const OTHERS = [
   },
 ]
 
+export const SERVICES = [
+  {
+    text: "AWS",
+    value: 0.9,
+  },
+  {
+    text: "Firebase",
+    value: 0.9,
+  },
+  {
+    text: "Google Cloud Platform",
+    value: 0.8,
+  },
+]
+
 export const TOOLS = [
   {
     text: "Git/Github/Gitlab",
