@@ -4,11 +4,17 @@ export default function About() {
   return (
     <div className="container p-8 mx-auto">
       <div className="flex flex-col gap-4 md:gap-8">
-        <h4 className="text-xl sm:text-2xl md:text-4xl">Hi! I am</h4>
-        <h1 className="text-4xl sm:text-6xl md:text-8xl">Julian Keller</h1>
-        <h4 className="text-xl sm:text-2xl md:text-4xl">
-          Senior Web Developer
-        </h4>
+        <div className="flex flex-wrap justify-between gap-4">
+          <div className="flex flex-col gap-4">
+            <h4 className="text-xl sm:text-2xl md:text-4xl">Hi! I am</h4>
+            <h1 className="text-4xl sm:text-6xl md:text-8xl">Julian Keller</h1>
+            <h4 className="text-xl sm:text-2xl md:text-4xl">
+              Senior Web Developer
+            </h4>
+          </div>
+
+          <img className="h-[200px] rounded-full" src="/favicon.jpg" alt="Hero"/>
+        </div>
 
         <Card className="mt-8">
           <CardHeader className="text-xl font-bold">Profile:</CardHeader>
@@ -55,7 +61,7 @@ export default function About() {
             <div className="flex flex-col gap-4">
               <div className="flex gap-8">
                 <div className="whitespace-nowrap w-[120px]">
-                  2012 - 2015
+                  2012/10 - 2015/09
                   <br />
                   Warsaw, Poland
                 </div>
@@ -69,7 +75,7 @@ export default function About() {
 
               <div className="flex gap-8">
                 <div className="whitespace-nowrap w-[120px]">
-                  2007 - 2011
+                  2007/10 - 2011/06
                   <br />
                   Warsaw, Poland
                 </div>
@@ -91,13 +97,17 @@ export default function About() {
           <CardBody>
             <div className="flex flex-col gap-4">
               <div className="flex gap-8">
-                <div className="w-32 whitespace-nowrap">2021-2022</div>
+                <div className="w-32 whitespace-nowrap">2020/05-2022/08</div>
 
                 <div>
                   <ul>
-                  <li className="text-lg font-bold">Senior Full-Stack Developer</li>
+                    <li className="text-lg font-bold">
+                      Senior Full-Stack Developer
+                    </li>
                     <li className="font-semibold text-md">SameSystem</li>
-                    <li><br/></li>
+                    <li>
+                      <br />
+                    </li>
                     <li>
                       Implemented visual and logical components for front-end
                       applications based on designs provided in React.
@@ -113,7 +123,9 @@ export default function About() {
                       Refactored one of the running integrations as an exemplary
                       implementation under the new module.
                     </li>
-                    <li><br/></li>
+                    <li>
+                      <br />
+                    </li>
                     <li className="italic">
                       Technologies: React, Redux, Ruby on Rails, GraphQL,
                       Apollo, Node.js, Shell, Architecture, Management, REST
@@ -127,13 +139,15 @@ export default function About() {
               </div>
 
               <div className="flex gap-8">
-                <div className="w-32 whitespace-nowrap">2016-2020</div>
+                <div className="w-32 whitespace-nowrap">2015/11-2020/04</div>
 
                 <div>
                   <ul>
                     <li className="text-lg font-bold">Full-Stack Developer</li>
                     <li className="font-semibold text-md">Brokerloop</li>
-                    <li><br/></li>
+                    <li>
+                      <br />
+                    </li>
                     <li>
                       Incorporated SMS/MMS marketing features based on the Plivo
                       communication platform to engage the real estate community
@@ -157,7 +171,9 @@ export default function About() {
                       handled on-call DevOps activities in AWS cloud, and
                       managed product releases.
                     </li>
-                    <li><br/></li>
+                    <li>
+                      <br />
+                    </li>
                     <li className="italic">
                       Technologies: JavaScript, TypeScript, Angular, Node.js,
                       Amazon, React, Stripe, YouTube, Video Conferencing, Google

@@ -30,7 +30,7 @@ export default function Certification() {
             <CardBody className="p-0">
               <Image
                 isZoomed
-                className="object-cover h-[300px]"
+                className="object-cover w-[400px] h-[300px]"
                 alt={item.title}
                 src={item.img}
               />
